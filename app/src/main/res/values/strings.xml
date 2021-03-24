@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Business Converter</string>
+    <string name="currency_converter">Currency converter</string>
+    <string name="salary_converter">Salary converter</string>
+    <string name="investment_calculator">investment calculator</string>
+    <string name="loan_calculator">loan calculator</string>
+    <string name="to">TO</string>
+    <string name="from">FROM</string>
+</resources>
