@@ -30,10 +30,10 @@ class SalaryConverterAmountActivity : AppCompatActivity() {
                 val bundle : Bundle = Bundle()
 
                 // wyciagamy wartosc z EditText
-                val bruttoSalaryValue : String = salaryEditText.text.toString()
+                val bruttoSalaryValue : Int = getBruttoSalaryValue(salaryEditText.text.toString())
 
                 //wycagnieta wartosc wrzucamy do paczki pod kluczem CONTRACT_KEY ktory jest string i ma wartosc "some key"
-                bundle.putString(SalaryConverterContractActivity.CONTRACT_KEY,bruttoSalaryValue)
+                bundle.putInt(SalaryConverterContractActivity.CONTRACT_KEY,bruttoSalaryValue)
 
                 // wrzucamy nasza paczke do intentu jako "extra"
                 intent.putExtras(bundle)
@@ -43,6 +43,12 @@ class SalaryConverterAmountActivity : AppCompatActivity() {
             }
         })
 
+    }
+
+    fun getBruttoSalaryValue(bruttoValue : String) : Int{
+        if(bruttoValue == "") return 0
+
+        return bruttoValue.toInt()
     }
 
 }
