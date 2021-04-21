@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     // kotlin wymusza defaultowo przypisanie wartosci do zmiennej
     // tutuaj jest to zmienna globalna
-   lateinit var currencyConverterButton : Button
+    lateinit var currencyConverterButton : Button
     lateinit var salaryConverterButton : Button
 
     // dostep do  findViewById(R.id.currencyConverterButton) mamy dopiero po wykonaniu funkcji onCreate()
@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         currencyConverterButton = findViewById(R.id.currencyConverterButton)
         salaryConverterButton = findViewById(R.id.salaryConverterButton)
 
-        currencyConverterButton.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(v: View?) {
+        currencyConverterButton.setOnClickListener(object : View.OnClickListener{ // po klinieciu wywolujemy cialo metody
+           override fun onClick(v: View?) {
                 // intent jest poleceniem dla systemu operacyjnego co ma wykonac, w tym przpyadku poleceniem jest stworzenie aktynowsci
                 val intent = Intent(this@MainActivity, CurrencyConverterActivity::class.java) //
                 // metoda start activity przyjmuje polecneiem ktore opisuje ktora aktywnosc ma system operacyjny uruchomic
@@ -42,10 +42,6 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
-
-
-
-
     }
 
 }

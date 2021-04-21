@@ -1,15 +1,16 @@
 package com.example.businessconverter
 
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 
 class SalaryConverterContractActivity:AppCompatActivity() {
     // companion object to statyczny obiekt przechowujacy statyczne obiekty, zmienne, badz metody
     companion object {
-        const val CONTRACT_KEY : String = "contract_key"
+        const val CONTRACT_KEY : String = "contract_key" //
     }
 
     lateinit var umowaOPraceTextView : TextView
@@ -24,22 +25,22 @@ class SalaryConverterContractActivity:AppCompatActivity() {
 
         //odwolujemy sie do "paczki" ktora mogla byc przekazana do intencji uruchamiajcej nasza aktywnosc
         val intentBundle : Bundle? = intent.extras
-        val salaryBruttoValue : Int?= intentBundle?.getInt(CONTRACT_KEY)
+        val salaryBruttoValue : Long?= intentBundle?.getLong(CONTRACT_KEY)
 
         if(salaryBruttoValue != null) {
-            umowaOPraceTextView.text = obliczenieUmowaOprace(salaryBruttoValue).toString()
-            umowaOZlecenieTextView.text = obliczenieUmowaOZlecenie(salaryBruttoValue).toString()
+            umowaOPraceTextView.text = obliczenieUmowaOprace(salaryBruttoValue).toString() + " PLN"
+            umowaOZlecenieTextView.text = obliczenieUmowaOZlecenie(salaryBruttoValue).toString() + " PLN"
         }
 
     }
 
     //stworz funkcje ktora przyjmuje Int jako argument i zwraca Int
-    fun obliczenieUmowaOprace(kwotaBrutto : Int) : Int {
-        return (kwotaBrutto * 0.7458).toInt()
+    fun obliczenieUmowaOprace(kwotaBrutto : Long) : Long {
+        return (kwotaBrutto * 0.7458).toLong()
     }
 
-    fun obliczenieUmowaOZlecenie(kwotaBrutto:Int) :  Int{
-        return (kwotaBrutto * 0.7458).toInt()
+    fun obliczenieUmowaOZlecenie(kwotaBrutto:Long) :  Long{
+        return (kwotaBrutto * 0.7458).toLong()
     }
 
 }

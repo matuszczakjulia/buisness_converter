@@ -3,7 +3,7 @@ package com.example.businessconverter
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 
-class CurrencyConverterActivity : AppCompatActivity(){
+class CurrencyConverterActivity : AppCompatActivity(){ // widok
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

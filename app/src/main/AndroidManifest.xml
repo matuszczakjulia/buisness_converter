@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BusinessConverter">
+        // ustalilismy, ze ekran glowny jest ekranem glownym, przez uzycie main, launcher-jklik na ikonke wlazca sie aktywnosc
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

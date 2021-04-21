@@ -14,7 +14,7 @@ class SalaryConverterAmountActivity : AppCompatActivity() {
     lateinit var calculateButton : Button
     lateinit var salaryEditText : EditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) { // metoda onCreate jest zwiazane z cyklem zycia aplikacji
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_salary_converter_amount)
 
@@ -30,10 +30,10 @@ class SalaryConverterAmountActivity : AppCompatActivity() {
                 val bundle : Bundle = Bundle()
 
                 // wyciagamy wartosc z EditText
-                val bruttoSalaryValue : Int = getBruttoSalaryValue(salaryEditText.text.toString())
+                val bruttoSalaryValue : Long = getBruttoSalaryValue(salaryEditText.text.toString())
 
                 //wycagnieta wartosc wrzucamy do paczki pod kluczem CONTRACT_KEY ktory jest string i ma wartosc "some key"
-                bundle.putInt(SalaryConverterContractActivity.CONTRACT_KEY,bruttoSalaryValue)
+                bundle.putLong(SalaryConverterContractActivity.CONTRACT_KEY,bruttoSalaryValue)
 
                 // wrzucamy nasza paczke do intentu jako "extra"
                 intent.putExtras(bundle)
@@ -42,13 +42,12 @@ class SalaryConverterAmountActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         })
-
     }
 
-    fun getBruttoSalaryValue(bruttoValue : String) : Int{
+    fun getBruttoSalaryValue(bruttoValue : String) : Long{
         if(bruttoValue == "") return 0
 
-        return bruttoValue.toInt()
+        return bruttoValue.toLong()
     }
 
 }
