@@ -1,0 +1,2 @@
+com/example/Business_Converter/BuildConfig.java
+ com.example.Business_Converter.BuildConfig
